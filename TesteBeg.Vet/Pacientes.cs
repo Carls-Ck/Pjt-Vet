@@ -19,7 +19,7 @@ namespace TesteBeg.Vet
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
                 {
                     conexao.Open();
 
@@ -49,7 +49,7 @@ namespace TesteBeg.Vet
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
                 {
                     conexao.Open();
 
@@ -74,7 +74,7 @@ namespace TesteBeg.Vet
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
                 {
                     conexao.Open();
 
@@ -106,7 +106,7 @@ namespace TesteBeg.Vet
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
                 {
                     conexao.Open();
 

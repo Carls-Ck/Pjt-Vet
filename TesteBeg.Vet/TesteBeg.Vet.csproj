@@ -71,11 +71,13 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMedicos.cs">
+    <Compile Include="..\..\..\..\OneDrive\Área de Trabalho\frmMedicos.cs">
       <SubType>Form</SubType>
+      <Link>frmMedicos.cs</Link>
     </Compile>
-    <Compile Include="frmMedicos.Designer.cs">
+    <Compile Include="..\..\..\..\OneDrive\Área de Trabalho\frmMedicos.Designer.cs">
       <DependentUpon>frmMedicos.cs</DependentUpon>
+      <Link>frmMedicos.Designer.cs</Link>
     </Compile>
     <Compile Include="frmPacientes.cs">
       <SubType>Form</SubType>
@@ -96,8 +98,9 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMedicos.resx">
+    <EmbeddedResource Include="..\..\..\..\OneDrive\Área de Trabalho\frmMedicos.resx">
       <DependentUpon>frmMedicos.cs</DependentUpon>
+      <Link>frmMedicos.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPacientes.resx">
       <DependentUpon>frmPacientes.cs</DependentUpon>

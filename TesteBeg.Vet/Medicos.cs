@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace TesteBeg.Vet
 {
-    public class Medico
+    public class Medic
     {
-        SqlCommand comandoSql = new SqlCommand();
+        SqlCommand SqlCommand = new SqlCommand();
         StringBuilder sql = new StringBuilder();
-        DataTable dadosTabela = new DataTable();
+        DataTable dataTable = new DataTable();
 
-        //Método que irá Salvar as informações conforme os parâmetros que possui entre parênteses.
-        public void Salvar(string nome,
+        //Method which gonna save the informations according to the parameters between parentheses.
+        public void Save(string name,
                                string endereco,
                                string experiencia,
                                string area,
@@ -27,7 +27,7 @@ namespace TesteBeg.Vet
             try //Estrutura try, a qual tenta realizar o que está dentro de suas chaves.
             {
                 //Estabelece a conexão com o banco através da string de conexão.
-                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
                 {
                     conexao.Open(); //Abre a conexão com o banco de dados.
 
@@ -64,7 +64,7 @@ namespace TesteBeg.Vet
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
                 {
                     conexao.Open();
 
@@ -89,7 +89,7 @@ namespace TesteBeg.Vet
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
                 {
                     conexao.Open();
 
@@ -123,7 +123,7 @@ namespace TesteBeg.Vet
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.stringConexao))
+                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
                 {
                     conexao.Open();
 

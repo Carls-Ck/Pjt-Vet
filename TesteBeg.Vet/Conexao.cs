@@ -9,7 +9,7 @@ namespace TesteBeg.Vet
     public class Conexao
     {
         private static string conexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Carlos Eduardo\source\repos\TesteBeg.Vet\TesteBeg.Vet\mydatabase.mdf"";Integrated Security=True";
-        public static string stringConexao
+        public static string StringConexao
         { 
             get { return conexao;  }
         }
