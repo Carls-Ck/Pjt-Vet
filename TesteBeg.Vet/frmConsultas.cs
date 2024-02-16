@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TesteBeg.Vet
 {
-    public partial class frmConsultas : Form
+    public partial class frmConsults : Form
     {
-        public frmConsultas()
+        public frmConsults()
         {
             InitializeComponent();
         }

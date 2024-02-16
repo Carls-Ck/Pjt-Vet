@@ -16,40 +16,37 @@ namespace TesteBeg.Vet
         DataTable dataTable = new DataTable();
 
         //Method which gonna save the informations according to the parameters between parentheses.
-        public void Save(string name,
-                               string endereco,
-                               string experiencia,
-                               string area,
-                               string DP,
-                               string telefone,
-                               string Cpf)
+        internal void Save(int idMedic, string name, string adress, string experience, string area, string DP,
+                               string telephone)
         {
-            try //Estrutura try, a qual tenta realizar o que está dentro de suas chaves.
+            try // Structure Try, which try to realize what is inside the keys.
             {
-                //Estabelece a conexão com o banco através da string de conexão.
-                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
+
+                // Lays down a connection with the database by the connection string.
+
+                using (SqlConnection connection = new SqlConnection(Connection.StringConnection))
                 {
-                    conexao.Open(); //Abre a conexão com o banco de dados.
+                    connection.Open(); //Open the connection with database
 
                     //Comando SQL para a inserção de valores nos respectivos campos da tabela Funcionário.
-                    sql.Append("INSERT INTO medicos (NOME_MEDICO, ENDERECO_MEDICO, EXPERIENCIA_MEDICO, AREA_MEDICO ");
-                    sql.Append("DISPONIBILIDADE, TELEFONE_MEDICO, CPF_MEDICO)");
+                    sql.Append("INSERT INTO medic (NAME_MEDIC, ADRESS_MEDIC, EXPERIENCE_MEDIC, AREA_MEDIC ");
+                    sql.Append("DISPONIBILITY_MEDIC, TELEPHONE_MEDIC, ID_MEDICO)");
 
-                    sql.Append(" VALUES (@nome, @endereco, @experiencia, @area, @DP, ");
-                    sql.Append("@telefone, @Cpf)");
+                    sql.Append(" VALUES (@name, @adress, @experience, @area, @DP, ");
+                    sql.Append("@telephone, @idmedic)");
 
                     //Relaciona cada valor com seu respectivo parâmetro.
-                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
-                    comandoSql.Parameters.Add(new SqlParameter("@endereco", endereco));
-                    comandoSql.Parameters.Add(new SqlParameter("@experiencia", experiencia));
-                    comandoSql.Parameters.Add(new SqlParameter("@area", area));
-                    comandoSql.Parameters.Add(new SqlParameter("@DP", DP));
-                    comandoSql.Parameters.Add(new SqlParameter("@telefone", telefone));
-                    comandoSql.Parameters.Add(new SqlParameter("@Cpf", Cpf));
+                    SqlCommand.Parameters.Add(new SqlParameter("@name", name));
+                    SqlCommand.Parameters.Add(new SqlParameter("@adress", adress));
+                    SqlCommand.Parameters.Add(new SqlParameter("@experience", experience));
+                    SqlCommand.Parameters.Add(new SqlParameter("@area", area));
+                    SqlCommand.Parameters.Add(new SqlParameter("@DP", DP));
+                    SqlCommand.Parameters.Add(new SqlParameter("@telephone", telephone));
+                    SqlCommand.Parameters.Add(new SqlParameter("@idmedico", idMedic));
 
-                    comandoSql.CommandText = sql.ToString(); //Indica que o código SQL é o que deverá ser executado.
-                    comandoSql.Connection = conexao; //Indica que a conexão dos comandos SQL é a string de conexão.
-                    comandoSql.ExecuteNonQuery(); //Executa todo o comando para a inserção dos valores.
+                    SqlCommand.CommandText = sql.ToString(); //Indica que o código SQL é o que deverá ser executado.
+                    SqlCommand.Connection = connection; //Indica que a conexão dos comandos SQL é a string de conexão.
+                    SqlCommand.ExecuteNonQuery(); //Executa todo o comando para a inserção dos valores.
                 }
             }
             catch (Exception)
@@ -60,21 +57,21 @@ namespace TesteBeg.Vet
         }
 
         //Método que armazena as informações da tabela Funcionário e retorna esses dados em ordem decrescente, baseado pelo id.
-        public DataTable Listar()
+        public DataTable List()
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
+                using (SqlConnection Connection = new SqlConnection(Vet.Connection.StringConnection))
                 {
-                    conexao.Open();
+                    Vet.Connection.Open();//tá só "Vet" pq foi simplificado pelo prórprio VS pq vai "." no nome, vulgo ' TesteBeg.Vet '
 
                     sql.Append("SELECT * FROM Medicos");
                     sql.Append(" ORDER BY ID_MEDICOS DESC");
 
-                    comandoSql.CommandText = sql.ToString();
-                    comandoSql.Connection = conexao;
-                    dadosTabela.Load(comandoSql.ExecuteReader());
-                    return dadosTabela;
+                    SqlCommand.CommandText = sql.ToString();
+                    SqlCommand.Connection = Connection;
+                    DataTable(SqlCommand.ExecuteReader());
+                    return DataTable;
                 }
             }
             catch (Exception)
@@ -84,32 +81,33 @@ namespace TesteBeg.Vet
         }
 
         //Método que irá Atualizar as informações conforme os parâmetros que possui entre parênteses.
-        public void Alterar(int idMedico, string nome, string endereco, string experiencia, string area,
-                            string DP, string telefone)
+        public void Change(int idMedic, string name, string adress, string experience, string area,
+                            string DP, string telephone)
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
+                using (SqlConnection connection = new SqlConnection(Connection.StringConnection))
                 {
-                    conexao.Open();
+                    Connection.Open();
 
-                    sql.Append("UPDATE Funcionario");
-                    sql.Append(" SET NOME_MEDICO=@nome, ENDERECO_MEDICO=@endereco, ");
-                    sql.Append("EXPERIENCIA_MEDICO=@experiencia, AREA_MEDICO=@area, DISPONIBILIDADE=@DP  ");
-                    sql.Append(" TELEFONE_MEDICO=@telefone, CPF_MEDICO=@cpf ");
+                    sql.Append("UPDATE Medic");
+                    sql.Append(" SET NAME_MEDIC=@name, ADRESS_MEDIC=@adress, ");
+                    sql.Append("EXPERIENCE_MEDIC=@experience, AREA_MEDIC=@area, DISPONIBILTY_MEDIC=@DP  ");
+                    sql.Append(" TELEPHONE_MEDIC=@telephone");
 
-                    sql.Append(" WHERE (ID_Medico=@idMedico)");
+                    sql.Append(" WHERE (ID_MEDIC=@idmedic)");
 
-                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
-                    comandoSql.Parameters.Add(new SqlParameter("@endereco", endereco));
-                    comandoSql.Parameters.Add(new SqlParameter("@experiencia", experiencia));
-                    comandoSql.Parameters.Add(new SqlParameter("@area", area));
-                    comandoSql.Parameters.Add(new SqlParameter("@DP", DP));
-                    comandoSql.Parameters.Add(new SqlParameter("@telefone", telefone));
+                    SqlCommand.Parameters.Add(new SqlParameter("@name", name));
+                    SqlCommand.Parameters.Add(new SqlParameter("@adress", adress));
+                    SqlCommand.Parameters.Add(new SqlParameter("@experiencia", experience));
+                    SqlCommand.Parameters.Add(new SqlParameter("@area", area));
+                    SqlCommand.Parameters.Add(new SqlParameter("@DP", DP));
+                    SqlCommand.Parameters.Add(new SqlParameter("@telefone", telephone));
+                    SqlCommand.Parameters.Add(new SqlParameter("@idmedico", idMedic));
 
-                    comandoSql.CommandText = sql.ToString();
-                    comandoSql.Connection = conexao;
-                    comandoSql.ExecuteNonQuery();
+                    SqlCommand.CommandText = sql.ToString();
+                    SqlCommand.Connection = connection;
+                    SqlCommand.ExecuteNonQuery();
                 }
             }
             catch (Exception)
@@ -119,33 +117,28 @@ namespace TesteBeg.Vet
         }
 
         //Método para excluir registros do banco.
-        public void Excluir(int idFuncionario)
+        public void Excluir(int idMedic)
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
+                using (SqlConnection Connection = new SqlConnection(Vet.Connection.StringConnection))
                 {
-                    conexao.Open();
+                    Vet.Connection.Open();
 
-                    sql.Append("DELETE FROM Funcionario");
-                    sql.Append(" WHERE (ID_FUNCIONARIO = @idFuncionario)");
+                    sql.Append("DELETE FROM Medic");
+                    sql.Append(" WHERE (ID_MEDIC = @idmedic)");
 
-                    comandoSql.Parameters.Add(new SqlParameter("@idFuncionario", idFuncionario));
+                    SqlCommand.Parameters.Add(new SqlParameter("@idmedic", idMedic));
 
-                    comandoSql.CommandText = sql.ToString();
-                    comandoSql.Connection = conexao;
-                    comandoSql.ExecuteNonQuery();
+                    SqlCommand.CommandText = sql.ToString();
+                    SqlCommand.Connection = Connection;
+                    SqlCommand.ExecuteNonQuery();
                 }
             }
             catch (Exception)
             {
                 throw new Exception("Ocorreu um erro no método Excluir. Caso o problema persista, entre em contato com o Administrador do sistema.");
             }
-        }
-
-        internal void Salvar(string text1, string text2, string text3, string valueMember, string text4, string text5)
-        {
-            throw new NotImplementedException();
         }
 
         internal static void ShowDialog()

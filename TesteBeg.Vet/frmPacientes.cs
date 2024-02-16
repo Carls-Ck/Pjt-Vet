@@ -11,37 +11,38 @@ using static System.Windows.Forms.MonthCalendar;
 
 namespace TesteBeg.Vet
 {
-    public partial class frmPacientes : Form
+    public partial class frmPacients : Form
     {
-        public frmPacientes()
+        public frmPacients()
         {
             InitializeComponent();
         }
 
-  
-        private Pacientes novoPaciente;
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private Pacients newPacient;
+
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                novoPaciente = new Pacientes();
+                newPacient = new Pacients();
 
-                if (txtCodigoP.Text == "0")
+                if (txtCodeP.Text == "0")
                 {
-                    novoPaciente.Salvar(txtNome.Text, txtDono.Text, dtpIdade.Text,
-                        clbProblema.ValueMember, clbVacinas.Text, txtHistorico.Text);
-                    MessageBox.Show("Funcionário salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    newPacient.Save(txtName.Text, txtOwner.Text, dtpBorn.Text,
+                        clbProblem.ValueMember, clbVaccines.Text, txtHistory.Text);
+                    MessageBox.Show("Funcionário salvo com sucesso!", "success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    novoPaciente.Alterar(Convert.ToInt32(txtCodigoP.Text), txtNome.Text, txtDono.Text, dtpIdade.Text,
-                       clbProblema.ValueMember, clbVacinas.Text, txtHistorico.Text);
-                    MessageBox.Show("Funcionário alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    newPacient.Change(Convert.ToInt32(txtCodeP.Text), txtName.Text, txtOwner.Text, dtpBorn.Text,
+                       clbProblem.ValueMember, clbVaccines.Text, txtHistory.Text);
+                    MessageBox.Show("Funcionário alterado com sucesso!", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                ListarPacientes();
-                Limpar();
+                ListPacients();
+                Clear();
             }
             catch (Exception ex)
             {
@@ -49,61 +50,51 @@ namespace TesteBeg.Vet
             }
         }
 
-        private void ListarPacientes()
+
+        private void btnNew_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Clear();
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            Limpar();
-        }
 
-        private void Limpar()
-        {
-            txtCodigoP.Text = "0";
-            txtNome.Clear();
-            txtDono.Clear();
-            txtHistorico.Clear();
-        }
-
-        private void Estilo()
-        {
-            for (int i = 0; i < dtgPacientes.Rows.Count; i += 2)
-            {
-                dtgPacientes.Rows[i].DefaultCellStyle.BackColor = Color.Honeydew;
-            }
-        }
-
-        private void dtgPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgPacients_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //primeiro verifica se possui informações mostradas no DataGridView
             if (e.RowIndex >= 0)
             {
                 //se sim, verifica se a coluna clicada foi referente ao btnEditar
-                if (dtgPacientes.Columns[e.ColumnIndex].Name == "btnEditar")
+                if (dtgPacients.Columns[e.ColumnIndex].Name == "btnEdit")
                 {
                     //se a condição for verdadeira, cada componente do formulário receberá as informações do DataGrid correspondentes a eles
-                    txtCodigoP.Text = dtgPacientes.Rows[e.RowIndex].Cells["ID_PACIENTE"].Value.ToString();
-                    txtNome.Text = dtgPacientes.Rows[e.RowIndex].Cells["NOME_PACIENTE"].Value.ToString();
-                    txtDono.Text = dtgPacientes.Rows[e.RowIndex].Cells["DONO_PACIENTE"].Value.ToString();
-                    dtpIdade.Value = Convert.ToDateTime(dtgPacientes.Rows[e.RowIndex].Cells["NASCIMENTO_PACIENTE"].Value.ToString());
-                    clbEspecie.Text = dtgPacientes.Rows[e.RowIndex].Cells["ESPECIE_PACIENTE"].Value.ToString();
-                    clbVacinas.Text = dtgPacientes.Rows[e.RowIndex].Cells["VACINAS_PACIENTE"].Value.ToString();
-                    clbProblema.Text = dtgPacientes.Rows[e.RowIndex].Cells["PROBLEMA_PACIENTE"].Value.ToString();
-                    txtHistorico.Text = dtgPacientes.Rows[e.RowIndex].Cells["HISTORICO_PACIENTE"].Value.ToString();
+                    txtCodeP.Text = dtgPacients.Rows[e.RowIndex].Cells["ID_PACIENT"].Value.ToString();
+                    txtName.Text = dtgPacients.Rows[e.RowIndex].Cells["NAME_PACIENT"].Value.ToString();
+                    txtOwner.Text = dtgPacients.Rows[e.RowIndex].Cells["OWNER_PACIENT"].Value.ToString();
+                    dtpBorn.Value = Convert.ToDateTime(dtgPacients.Rows[e.RowIndex].Cells["BORN_PACIENT"].Value.ToString());
+                    clbSpecies.Text = dtgPacients.Rows[e.RowIndex].Cells["SPECIES_PACIENT"].Value.ToString();
+                    clbVaccines.Text = dtgPacients.Rows[e.RowIndex].Cells["VACCINES_PACIENT"].Value.ToString();
+                    clbProblem.Text = dtgPacients.Rows[e.RowIndex].Cells["PROBLEM_PACIENT"].Value.ToString();
+                    txtHistory.Text = dtgPacients.Rows[e.RowIndex].Cells["HISTORY_PACIENT"].Value.ToString();
                 }
+
             }
         }
 
-        private void ListarPaciente()
+        private void Style()
+        {
+            for (int i = 0; i < dtgPacients.Rows.Count; i += 2)
+            {
+                dtgPacients.Rows[i].DefaultCellStyle.BackColor = Color.Honeydew;
+            }
+        }
+
+        private void ListPacients()
         {
             try
             {
-                novoPaciente = new Pacientes();
-                dtgPacientes.DataSource = novoPaciente.Listar();
+                Pacients newPacient = new Pacients();
+                dtgPacients.DataSource = newPacient.List();
 
-                Estilo();
+                Style();
             }
             catch (Exception ex)
             {
@@ -111,15 +102,22 @@ namespace TesteBeg.Vet
             }
         }
 
-        private void frmPaceintes_Load(object sender, EventArgs e)
+        private void frmPaceints_Load(object sender, EventArgs e)
         {
-            ListarPacientes();
+            ListPacients();
         }
 
-        private void txtDono_TextChanged(object sender, EventArgs e)
+        private void txtOwner_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private void Clear();
+        {
+            txtCodeP.Text = "0";
+            txtName.Clear();
+            txtOwner.Clear();
+            txtHistory.Clear();
         }
     }
-
 }
+

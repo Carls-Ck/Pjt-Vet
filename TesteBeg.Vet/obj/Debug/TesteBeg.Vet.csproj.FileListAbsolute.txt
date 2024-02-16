@@ -15,3 +15,6 @@ C:\Users\Carlos Eduardo\source\repos\TesteBeg.Vet\TesteBeg.Vet\obj\Debug\TesteBe
 C:\Users\Carlos Eduardo\source\repos\TesteBeg.Vet\TesteBeg.Vet\obj\Debug\TesteBeg.Vet.frmPrincipal.resources
 C:\Users\Carlos Eduardo\source\repos\TesteBeg.Vet\TesteBeg.Vet\obj\Debug\TesteBeg.Vet.frmConsultas.resources
 C:\Users\Carlos Eduardo\source\repos\TesteBeg.Vet\TesteBeg.Vet\obj\Debug\TesteBeg.Vet.frmMedicos.resources
+C:\Users\Carlos Eduardo\source\repos\TesteBeg.Vet\TesteBeg.Vet\obj\Debug\TesteBeg.Vet.frmMedics.resources
+C:\Users\Carlos Eduardo\source\repos\TesteBeg.Vet\TesteBeg.Vet\obj\Debug\TesteBeg.Vet.frmPacients.resources
+C:\Users\Carlos Eduardo\source\repos\TesteBeg.Vet\TesteBeg.Vet\obj\Debug\TesteBeg.Vet.frmConsults.resources

@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace TesteBeg.Vet
 {
-    public class Conexao
+    public class Connection
     {
-        private static string conexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Carlos Eduardo\source\repos\TesteBeg.Vet\TesteBeg.Vet\mydatabase.mdf"";Integrated Security=True";
-        public static string StringConexao
+        public static string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Carlos Eduardo\source\repos\TesteBeg.Vet\TesteBeg.Vet\mydatabase.mdf"";Integrated Security=True";
+        public static string StringConnection
         { 
-            get { return conexao;  }
+            get { return connection;  }
+        }
+
+        internal static void Open()
+        {
+            throw new NotImplementedException();
         }
     }
 }

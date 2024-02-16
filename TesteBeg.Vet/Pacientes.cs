@@ -8,36 +8,36 @@ using System.Threading.Tasks;
 
 namespace TesteBeg.Vet
 {
-    internal class Pacientes
+    internal class Pacients
     {
-        SqlCommand comandoSql = new SqlCommand();
+        SqlCommand SqlCommand = new SqlCommand();
         StringBuilder sql = new StringBuilder();
-        DataTable dadosTabela = new DataTable();
+        DataTable DataTable = new DataTable();
 
-        public void Salvar(string dono, string nome, DateTime nascimento, string especie, string vascinas,
-            string problema, string historico)
+        public void Save(string owner, string name, DateTime Born, string species, string vasccines,
+            string problem, string history, SqlConnection connection)
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
+                using (SqlConnection Connection = new SqlConnection(connection.StringConnection)) ;
                 {
-                    conexao.Open();
+                    Connection.Open();
 
-                    sql.Append("INSERT INTO Paciente (NOME_PACIENTE, DONO_PACIENTE, NASCIMENTO_PACIENTE, ");
-                    sql.Append(" ESPECIE_PACIENTE, VASCINAS_PACIENTE, PROBLEMA_PACIENTE, HISTORICO_PACIENTE) ");
-                    sql.Append(" VALUES (@nome, @dono, @nascimento, @especie, @vascinas, @problema, @historico) ");
+                    sql.Append("INSERT INTO Paciente (NAME_PACIENT, OWNER_PACIENT, BORN_PACIENT, ");
+                    sql.Append(" SPECIES_PACIENT, VASCCINES_PACIENT, PROBLEM_PACIENT, HISTORY_PACIENT) ");
+                    sql.Append(" VALUES (@name, @owner, @born, @species, @vasccines, @problem, @history) ");
 
-                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
-                    comandoSql.Parameters.Add(new SqlParameter("@dono", dono));
-                    comandoSql.Parameters.Add(new SqlParameter("@nascimento", nascimento));
-                    comandoSql.Parameters.Add(new SqlParameter("@especie", especie));
-                    comandoSql.Parameters.Add(new SqlParameter("@vascinas", vascinas));
-                    comandoSql.Parameters.Add(new SqlParameter("@problema", problema));
-                    comandoSql.Parameters.Add(new SqlParameter("@historico", historico));
- 
-                    comandoSql.CommandText = sql.ToString();
-                    comandoSql.Connection = conexao;
-                    comandoSql.ExecuteNonQuery();
+                    SqlCommand.Parameters.Add(new SqlParameter("@name", name));
+                    SqlCommand.Parameters.Add(new SqlParameter("@owner", owner));
+                    SqlCommand.Parameters.Add(new SqlParameter("@born", Born));
+                    SqlCommand.Parameters.Add(new SqlParameter("@species", species));
+                    SqlCommand.Parameters.Add(new SqlParameter("@vasccines", vasccines));
+                    SqlCommand.Parameters.Add(new SqlParameter("@problem", problem));
+                    SqlCommand.Parameters.Add(new SqlParameter("@history", history));
+
+                    SqlCommand.CommandText = sql.ToString();
+                    SqlCommand.Connection = connection;
+                    SqlCommand.ExecuteNonQuery();
                 }
             }
             catch (Exception)
@@ -45,21 +45,21 @@ namespace TesteBeg.Vet
                 throw new Exception("Ocorreu um erro no método Salvar. Caso o problema persista, entre em contato com o Administrador do Sistema.");
             }
         }
-        public DataTable Listar()
+        public DataTable List()
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
+                using (SqlConnection connection = new SqlConnection(Connection.StringConnection))
                 {
-                    conexao.Open();
+                    connection.Open();
 
                     sql.Append("SELECT * FROM Pacientes");
                     sql.Append(" ORDER BY ID_CLIENTE DESC");
 
-                    comandoSql.CommandText = sql.ToString();
-                    comandoSql.Connection = conexao;
-                    dadosTabela.Load(comandoSql.ExecuteReader());
-                    return dadosTabela;
+                    SqlCommand.CommandText = sql.ToString();
+                    SqlCommand.Connection = connection;
+                    DataTable.Load(SqlCommand.ExecuteReader());
+                    return DataTable;
                 }
             }
             catch (Exception)
@@ -69,32 +69,32 @@ namespace TesteBeg.Vet
         }
 
 
-        public void Alterar(int idPaciente, string dono, string nome, DateTime nascimento, string especie, string vascinas,
-            string problema, string historico)
+        public void Change(int idPacient, string owner, string name, DateTime Born, string species, string vasccines,
+            string problem, string history)
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
+                using (SqlConnection connection = new SqlConnection(Connection.StringConnection))
                 {
-                    conexao.Open();
+                    Connection.Open();
 
                     sql.Append("UPDATE Cliente");
-                    sql.Append(" SET NOME_PACIENTE=@nome, DONO_PACIENTE=@dono, NASCIMENTO_PACIENTE=@nascimento, ");
-                    sql.Append(" ESPECIE_PACIENTE=@especie, VASCINAS_PACIENTE=@vascinas, PROBLEMA_PACIENTE=@problema, HISTORICO_PACIENTE=@historico");
-                    sql.Append(" WHERE (ID_PACIENTE=@idPaciente)");
+                    sql.Append(" SET NAME_PACIENT=@name, OWNER_PACIENT=@owner, BORN_PACIENT=@born, ");
+                    sql.Append(" SPECIES_PACIENT=@species, VASCCNIES_PACIENT=@vasccines, PROBLEM_PACIENT=@problem, HISTORICO_PACIENTE=@historico");
+                    sql.Append(" WHERE (ID_PACIENT=@idPacient)");
 
-                    comandoSql.Parameters.Add(new SqlParameter("@nome", nome));
-                    comandoSql.Parameters.Add(new SqlParameter("@dono", dono));
-                    comandoSql.Parameters.Add(new SqlParameter("@nascimento", nascimento));
-                    comandoSql.Parameters.Add(new SqlParameter("@especie", especie));
-                    comandoSql.Parameters.Add(new SqlParameter("@vascinas", vascinas));
-                    comandoSql.Parameters.Add(new SqlParameter("@problema", problema));
-                    comandoSql.Parameters.Add(new SqlParameter("@historico", historico));
-                    comandoSql.Parameters.Add(new SqlParameter("@idPaciente", idPaciente));
+                    SqlCommand.Parameters.Add(new SqlParameter("@name", name));
+                    SqlCommand.Parameters.Add(new SqlParameter("@owner", owner));
+                    SqlCommand.Parameters.Add(new SqlParameter("@born", Born));
+                    SqlCommand.Parameters.Add(new SqlParameter("@species", species));
+                    SqlCommand.Parameters.Add(new SqlParameter("@vasccines", vasccines));
+                    SqlCommand.Parameters.Add(new SqlParameter("@problem", problem));
+                    SqlCommand.Parameters.Add(new SqlParameter("@history", history));
+                    SqlCommand.Parameters.Add(new SqlParameter("@idPacient", idPacient));
 
-                    comandoSql.CommandText = sql.ToString();
-                    comandoSql.Connection = conexao;
-                    comandoSql.ExecuteNonQuery();
+                    SqlCommand.CommandText = sql.ToString();
+                    SqlCommand.Connection = connection;
+                    SqlCommand.ExecuteNonQuery();
                 }
             }
             catch (Exception)
@@ -106,17 +106,17 @@ namespace TesteBeg.Vet
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(Connection.StringConnection))
                 {
-                    conexao.Open();
+                    Connection.Open();
 
                     sql.Append("DELETE FROM Pacientes");
                     sql.Append(" WHERE (ID_PACIENTE = @idPaciente)");
-                    comandoSql.Parameters.Add(new SqlParameter("@idPaciente", idPaciente));
+                    SqlCommand.Parameters.Add(new SqlParameter("@idPaciente", idPaciente));
 
-                    comandoSql.CommandText = sql.ToString();
-                    comandoSql.Connection = conexao;
-                    comandoSql.ExecuteNonQuery();
+                    SqlCommand.CommandText = sql.ToString();
+                    SqlCommand.Connection = conexao;
+                    SqlCommand.ExecuteNonQuery();
                 }
             }
             catch (Exception)
@@ -125,12 +125,13 @@ namespace TesteBeg.Vet
             }
         }
 
-        internal void Salvar(string text1, string text2, string text3, string valueMember, string text4, string text5)
+
+        internal void Save(string text1, string text2, string text3, string valueMember, string text4, string text5)
         {
             throw new NotImplementedException();
         }
 
-        internal void Alterar(int v, string text1, string text2, string text3, string valueMember, string text4, string text5)
+        internal void Change(int v, string text1, string text2, string text3, string valueMember, string text4, string text5)
         {
             throw new NotImplementedException();
         }

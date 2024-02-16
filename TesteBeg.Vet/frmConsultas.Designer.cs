@@ -1,6 +1,6 @@
 ﻿namespace TesteBeg.Vet
 {
-    partial class frmConsultas
+    partial class frmConsults
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsults));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -177,7 +177,7 @@
             this.cbCMedic.TabIndex = 12;
             this.cbCMedic.SelectedIndexChanged += new System.EventHandler(this.cbCMedic_SelectedIndexChanged);
             // 
-            // frmConsultas
+            // frmConsults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,8 +198,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "frmConsultas";
-            this.Text = "Consultas";
+            this.Name = "frmConsults";
+            this.Text = "Consults";
             this.Load += new System.EventHandler(this.frmConsultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

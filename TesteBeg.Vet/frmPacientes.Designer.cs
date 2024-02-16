@@ -2,7 +2,7 @@
 
 namespace TesteBeg.Vet
 {
-    partial class frmPacientes
+    partial class frmPacients
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,8 @@ namespace TesteBeg.Vet
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPacientes));
-            this.dtgPacientes = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPacients));
+            this.dtgPacients = new System.Windows.Forms.DataGridView();
             this.DONO_PACIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOME_PACIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESPECIE_PACIENTE = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -48,37 +48,37 @@ namespace TesteBeg.Vet
             this.lblProblema = new System.Windows.Forms.Label();
             this.lblHistorico = new System.Windows.Forms.Label();
             this.lblVacinaPaciente = new System.Windows.Forms.Label();
-            this.clbVacinas = new System.Windows.Forms.CheckedListBox();
-            this.txtDono = new System.Windows.Forms.TextBox();
-            this.txtHistorico = new System.Windows.Forms.TextBox();
-            this.dtpIdade = new System.Windows.Forms.DateTimePicker();
+            this.clbVaccines = new System.Windows.Forms.CheckedListBox();
+            this.txtOwner = new System.Windows.Forms.TextBox();
+            this.txtHistory = new System.Windows.Forms.TextBox();
+            this.dtpBorn = new System.Windows.Forms.DateTimePicker();
             this.lblNomeAnimal = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.clbEspecie = new System.Windows.Forms.CheckedListBox();
-            this.clbProblema = new System.Windows.Forms.CheckedListBox();
-            this.txtCodigoP = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPacientes)).BeginInit();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.clbSpecies = new System.Windows.Forms.CheckedListBox();
+            this.clbProblem = new System.Windows.Forms.CheckedListBox();
+            this.txtCodeP = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPacients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dtgPacientes
+            // dtgPacients
             // 
-            this.dtgPacientes.AllowUserToAddRows = false;
-            this.dtgPacientes.AllowUserToDeleteRows = false;
-            this.dtgPacientes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtgPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgPacients.AllowUserToAddRows = false;
+            this.dtgPacients.AllowUserToDeleteRows = false;
+            this.dtgPacients.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgPacients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgPacients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DONO_PACIENTE,
             this.NOME_PACIENTE,
             this.ESPECIE_PACIENTE,
             this.VACINAS_PACIENTE,
             this.Problema});
-            this.dtgPacientes.Location = new System.Drawing.Point(12, 283);
-            this.dtgPacientes.Name = "dtgPacientes";
-            this.dtgPacientes.Size = new System.Drawing.Size(579, 150);
-            this.dtgPacientes.TabIndex = 1;
-            this.dtgPacientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPacientes_CellContentClick);
+            this.dtgPacients.Location = new System.Drawing.Point(12, 283);
+            this.dtgPacients.Name = "dtgPacients";
+            this.dtgPacients.Size = new System.Drawing.Size(579, 150);
+            this.dtgPacients.TabIndex = 1;
+            this.dtgPacients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPacients_CellContentClick);
             // 
             // DONO_PACIENTE
             // 
@@ -143,7 +143,6 @@ namespace TesteBeg.Vet
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(23, 22);
             this.btnSalvar.Text = "toolStripButton1";
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // bindingNavigator1
             // 
@@ -226,10 +225,10 @@ namespace TesteBeg.Vet
             this.lblVacinaPaciente.TabIndex = 7;
             this.lblVacinaPaciente.Text = "Vacinas:";
             // 
-            // clbVacinas
+            // clbVaccines
             // 
-            this.clbVacinas.FormattingEnabled = true;
-            this.clbVacinas.Items.AddRange(new object[] {
+            this.clbVaccines.FormattingEnabled = true;
+            this.clbVaccines.Items.AddRange(new object[] {
             "",
             "Raiva",
             "Parvovirose",
@@ -246,35 +245,34 @@ namespace TesteBeg.Vet
             "Laringotraqueíte",
             "Maxomatose",
             "Hemorrágica viral"});
-            this.clbVacinas.Location = new System.Drawing.Point(89, 196);
-            this.clbVacinas.Name = "clbVacinas";
-            this.clbVacinas.Size = new System.Drawing.Size(224, 19);
-            this.clbVacinas.TabIndex = 8;
+            this.clbVaccines.Location = new System.Drawing.Point(89, 196);
+            this.clbVaccines.Name = "clbVaccines";
+            this.clbVaccines.Size = new System.Drawing.Size(224, 19);
+            this.clbVaccines.TabIndex = 8;
             // 
-            // txtDono
+            // txtOwner
             // 
-            this.txtDono.Location = new System.Drawing.Point(73, 42);
-            this.txtDono.Name = "txtDono";
-            this.txtDono.Size = new System.Drawing.Size(518, 20);
-            this.txtDono.TabIndex = 10;
-            this.txtDono.TextChanged += new System.EventHandler(this.txtDono_TextChanged);
+            this.txtOwner.Location = new System.Drawing.Point(73, 42);
+            this.txtOwner.Name = "txtOwner";
+            this.txtOwner.Size = new System.Drawing.Size(518, 20);
+            this.txtOwner.TabIndex = 10;
             // 
-            // txtHistorico
+            // txtHistory
             // 
-            this.txtHistorico.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtHistorico.Location = new System.Drawing.Point(403, 119);
-            this.txtHistorico.Name = "txtHistorico";
-            this.txtHistorico.Size = new System.Drawing.Size(188, 20);
-            this.txtHistorico.TabIndex = 12;
-            this.txtHistorico.Text = "fale o histórico de sintomas";
+            this.txtHistory.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtHistory.Location = new System.Drawing.Point(403, 119);
+            this.txtHistory.Name = "txtHistory";
+            this.txtHistory.Size = new System.Drawing.Size(188, 20);
+            this.txtHistory.TabIndex = 12;
+            this.txtHistory.Text = "fale o histórico de sintomas";
             // 
-            // dtpIdade
+            // dtpBorn
             // 
-            this.dtpIdade.Location = new System.Drawing.Point(122, 120);
-            this.dtpIdade.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
-            this.dtpIdade.Name = "dtpIdade";
-            this.dtpIdade.Size = new System.Drawing.Size(191, 20);
-            this.dtpIdade.TabIndex = 14;
+            this.dtpBorn.Location = new System.Drawing.Point(122, 120);
+            this.dtpBorn.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
+            this.dtpBorn.Name = "dtpBorn";
+            this.dtpBorn.Size = new System.Drawing.Size(191, 20);
+            this.dtpBorn.TabIndex = 14;
             // 
             // lblNomeAnimal
             // 
@@ -286,17 +284,17 @@ namespace TesteBeg.Vet
             this.lblNomeAnimal.TabIndex = 15;
             this.lblNomeAnimal.Text = "Nome do Pet:";
             // 
-            // txtNome
+            // txtName
             // 
-            this.txtNome.Location = new System.Drawing.Point(131, 66);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(460, 20);
-            this.txtNome.TabIndex = 16;
+            this.txtName.Location = new System.Drawing.Point(131, 66);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(460, 20);
+            this.txtName.TabIndex = 16;
             // 
-            // clbEspecie
+            // clbSpecies
             // 
-            this.clbEspecie.FormattingEnabled = true;
-            this.clbEspecie.Items.AddRange(new object[] {
+            this.clbSpecies.FormattingEnabled = true;
+            this.clbSpecies.Items.AddRange(new object[] {
             "",
             "Cão de pequeno porte ( > 10 meses)",
             "Cão de médio porte  ( > 13 meses)",
@@ -315,15 +313,15 @@ namespace TesteBeg.Vet
             "Ave filhote",
             "Coelho adulto ( > 6 meses)",
             "Coelho filhote"});
-            this.clbEspecie.Location = new System.Drawing.Point(164, 158);
-            this.clbEspecie.Name = "clbEspecie";
-            this.clbEspecie.Size = new System.Drawing.Size(149, 19);
-            this.clbEspecie.TabIndex = 17;
+            this.clbSpecies.Location = new System.Drawing.Point(164, 158);
+            this.clbSpecies.Name = "clbSpecies";
+            this.clbSpecies.Size = new System.Drawing.Size(149, 19);
+            this.clbSpecies.TabIndex = 17;
             // 
-            // clbProblema
+            // clbProblem
             // 
-            this.clbProblema.FormattingEnabled = true;
-            this.clbProblema.Items.AddRange(new object[] {
+            this.clbProblem.FormattingEnabled = true;
+            this.clbProblem.Items.AddRange(new object[] {
             "",
             "Exame de Rotina",
             "alergia",
@@ -338,48 +336,48 @@ namespace TesteBeg.Vet
             "problemas oftalmológicos",
             "parasitas",
             "problemas respiratórios"});
-            this.clbProblema.Location = new System.Drawing.Point(104, 232);
-            this.clbProblema.Name = "clbProblema";
-            this.clbProblema.Size = new System.Drawing.Size(209, 19);
-            this.clbProblema.TabIndex = 18;
+            this.clbProblem.Location = new System.Drawing.Point(104, 232);
+            this.clbProblem.Name = "clbProblem";
+            this.clbProblem.Size = new System.Drawing.Size(209, 19);
+            this.clbProblem.TabIndex = 18;
             // 
-            // txtCodigoP
+            // txtCodeP
             // 
-            this.txtCodigoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoP.Location = new System.Drawing.Point(534, 92);
-            this.txtCodigoP.Name = "txtCodigoP";
-            this.txtCodigoP.Size = new System.Drawing.Size(57, 20);
-            this.txtCodigoP.TabIndex = 19;
-            this.txtCodigoP.Text = "Nº:";
+            this.txtCodeP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodeP.Location = new System.Drawing.Point(534, 92);
+            this.txtCodeP.Name = "txtCodeP";
+            this.txtCodeP.Size = new System.Drawing.Size(57, 20);
+            this.txtCodeP.TabIndex = 19;
+            this.txtCodeP.Text = "Nº:";
             // 
-            // frmPacientes
+            // frmPacients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(616, 434);
-            this.Controls.Add(this.txtCodigoP);
-            this.Controls.Add(this.clbProblema);
-            this.Controls.Add(this.clbEspecie);
-            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtCodeP);
+            this.Controls.Add(this.clbProblem);
+            this.Controls.Add(this.clbSpecies);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblNomeAnimal);
-            this.Controls.Add(this.dtpIdade);
-            this.Controls.Add(this.txtHistorico);
-            this.Controls.Add(this.txtDono);
-            this.Controls.Add(this.clbVacinas);
+            this.Controls.Add(this.dtpBorn);
+            this.Controls.Add(this.txtHistory);
+            this.Controls.Add(this.txtOwner);
+            this.Controls.Add(this.clbVaccines);
             this.Controls.Add(this.lblVacinaPaciente);
             this.Controls.Add(this.lblHistorico);
             this.Controls.Add(this.lblProblema);
             this.Controls.Add(this.lblEspeciePaciente);
             this.Controls.Add(this.lblIdadeP);
             this.Controls.Add(this.lblNomePaciente);
-            this.Controls.Add(this.dtgPacientes);
+            this.Controls.Add(this.dtgPacients);
             this.Controls.Add(this.bindingNavigator1);
-            this.Name = "frmPacientes";
+            this.Name = "frmPacients";
             this.ShowIcon = false;
-            this.Text = "Cadastro Pacientes";
+            this.Text = "PacientRegister";
             this.Load += new System.EventHandler(this.frmPacientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPacientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPacients)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -394,7 +392,7 @@ namespace TesteBeg.Vet
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dtgPacientes;
+        private System.Windows.Forms.DataGridView dtgPacients;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton btnSalvar;
@@ -405,15 +403,15 @@ namespace TesteBeg.Vet
         private System.Windows.Forms.Label lblProblema;
         private System.Windows.Forms.Label lblHistorico;
         private System.Windows.Forms.Label lblVacinaPaciente;
-        private System.Windows.Forms.TextBox txtDono;
-        private System.Windows.Forms.TextBox txtHistorico;
-        private System.Windows.Forms.DateTimePicker dtpIdade;
+        private System.Windows.Forms.TextBox txtOwner;
+        private System.Windows.Forms.TextBox txtHistory;
+        private System.Windows.Forms.DateTimePicker dtpBorn;
         private System.Windows.Forms.Label lblNomeAnimal;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.CheckedListBox clbEspecie;
-        private System.Windows.Forms.CheckedListBox clbProblema;
-        private System.Windows.Forms.CheckedListBox clbVacinas;
-        private System.Windows.Forms.TextBox txtCodigoP;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.CheckedListBox clbSpecies;
+        private System.Windows.Forms.CheckedListBox clbProblem;
+        private System.Windows.Forms.CheckedListBox clbVaccines;
+        private System.Windows.Forms.TextBox txtCodeP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dono;
         private System.Windows.Forms.DataGridViewTextBoxColumn NPet;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Especie;

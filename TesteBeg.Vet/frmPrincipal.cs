@@ -23,31 +23,31 @@ namespace TesteBeg.Vet
             num = 0;
         }
 
-        private Consulta novaConsulta;
+        private Consults newConsults;
 
-        private void btnMedicos_Click(object sender, EventArgs e)
+        private void btnMedic_Click(object sender, EventArgs e)
         {
-            frmMedicos formMedicos = new frmMedicos();
-            Medico.ShowDialog();
+            frmMedics frmMedics = new frmMedics();
+            Medic.ShowDialog();
         }
 
         private void btnPacientes_Click(object sender, EventArgs e)
         {
-            frmPacientes Pacientes = new frmPacientes();
-            Pacientes.ShowDialog();
+            frmPacients Pacients = new frmPacients();
+            Pacients.ShowDialog();
         } 
 
-        private void btnConsultas_Click(object sender, EventArgs e)
+        private void btnConsults_Click(object sender, EventArgs e)
         {
-            frmConsultas Consultas = new frmConsultas();
-            Consultas.ShowDialog();
+            frmConsults Consults = new frmConsults();
+            Consults.ShowDialog();
         }
 
-        private void ListarConsultas()
+        private void ListConsults()
         {
             try
             {
-                novaConsulta = new Consulta();
+                NewConsults = new Consults();
                 dtgConsultas.DataSource = novaConsulta.Listar();
 
             }
@@ -59,7 +59,7 @@ namespace TesteBeg.Vet
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             frmPrincipal Principal = new frmPrincipal();
-            ListarConsultas();
+            ListConsults();
             
         }
 
