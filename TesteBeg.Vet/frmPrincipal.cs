@@ -47,8 +47,8 @@ namespace TesteBeg.Vet
         {
             try
             {
-                NewConsults = new Consults();
-                dtgConsultas.DataSource = novaConsulta.Listar();
+                newConsults = new Consults();
+                dtgConsultas.DataSource = newConsults.Listar();
 
             }
             catch (Exception ex)

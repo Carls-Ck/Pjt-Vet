@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TesteBeg.Vet
 {
-    internal class Consulta
+    internal class Consults
     {
         internal object Listar()
         {

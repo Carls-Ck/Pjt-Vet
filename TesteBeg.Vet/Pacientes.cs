@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TesteBeg.Vet
 {
@@ -19,7 +20,7 @@ namespace TesteBeg.Vet
         {
             try
             {
-                using (SqlConnection Connection = new SqlConnection(connection.StringConnection)) ;
+                using (SqlConnection Connection = new SqlConnection(connection.StringConnection)) 
                 {
                     Connection.Open();
 

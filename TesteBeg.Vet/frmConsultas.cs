@@ -17,7 +17,7 @@ namespace TesteBeg.Vet
             InitializeComponent();
         }
 
-        private Consulta novaConsulta;
+        private Consults newConsults;
 
         private void cbCMedic_SelectedIndexChanged(object sender, EventArgs e)
         {

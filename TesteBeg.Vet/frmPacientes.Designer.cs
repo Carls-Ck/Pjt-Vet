@@ -38,9 +38,6 @@ namespace TesteBeg.Vet
             this.ESPECIE_PACIENTE = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.VACINAS_PACIENTE = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Problema = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.btnSalvar = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.lblNomePaciente = new System.Windows.Forms.Label();
             this.lblIdadeP = new System.Windows.Forms.Label();
@@ -57,6 +54,7 @@ namespace TesteBeg.Vet
             this.clbSpecies = new System.Windows.Forms.CheckedListBox();
             this.clbProblem = new System.Windows.Forms.CheckedListBox();
             this.txtCodeP = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPacients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -120,40 +118,14 @@ namespace TesteBeg.Vet
             this.Problema.ReadOnly = true;
             this.Problema.Width = 150;
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Excluir";
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(23, 22);
-            this.btnSalvar.Text = "toolStripButton1";
-            // 
             // bindingNavigator1
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.AddNewItem = null;
             this.bindingNavigator1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.bindingNavigator1.CountItem = null;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.btnSalvar});
+            this.btnClear});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = null;
             this.bindingNavigator1.MoveLastItem = null;
@@ -350,6 +322,16 @@ namespace TesteBeg.Vet
             this.txtCodeP.TabIndex = 19;
             this.txtCodeP.Text = "Nº:";
             // 
+            // btnClear
+            // 
+            this.btnClear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(23, 22);
+            this.btnClear.Text = "btnClear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // frmPacients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,9 +375,6 @@ namespace TesteBeg.Vet
 
         #endregion
         private System.Windows.Forms.DataGridView dtgPacients;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton btnSalvar;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.Label lblNomePaciente;
         private System.Windows.Forms.Label lblIdadeP;
@@ -421,5 +400,6 @@ namespace TesteBeg.Vet
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME_PACIENTE;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ESPECIE_PACIENTE;
         private System.Windows.Forms.DataGridViewCheckBoxColumn VACINAS_PACIENTE;
+        private System.Windows.Forms.ToolStripButton btnClear;
     }
 }

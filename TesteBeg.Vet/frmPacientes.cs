@@ -42,7 +42,7 @@ namespace TesteBeg.Vet
                 }
 
                 ListPacients();
-                Clear();
+                btnClear_Click();
             }
             catch (Exception ex)
             {
@@ -53,9 +53,13 @@ namespace TesteBeg.Vet
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            Clear();
+            btnClear_Click();
         }
 
+        private void btnClear_Click()
+        {
+            throw new NotImplementedException();
+        }
 
         private void dtgPacients_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -111,12 +115,13 @@ namespace TesteBeg.Vet
         {
 
         }
-        private void Clear();
+private void btnClear_Click(object sender, EventArgs e)
         {
             txtCodeP.Text = "0";
             txtName.Clear();
             txtOwner.Clear();
             txtHistory.Clear();
+
         }
     }
 }

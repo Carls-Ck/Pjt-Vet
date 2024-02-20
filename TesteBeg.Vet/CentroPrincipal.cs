@@ -18,15 +18,15 @@ namespace TesteBeg.Vet
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(Conexao.StringConexao))
+                using (SqlConnection connection = new SqlConnection(Connection.StringConnection))
                 {
-                    conexao.Open();
+                    Connection.Open();
 
                     sql.Append("SELECT * FROM CentroPrincipal");
                     sql.Append(" ORDER BY ID_CONSULTAS DESC");
 
                     comandoSql.CommandText = sql.ToString();
-                    comandoSql.Connection = conexao;
+                    comandoSql.Connection = connection;
                     dadosTabela.Load(comandoSql.ExecuteReader());
                     return dadosTabela;
                 }
